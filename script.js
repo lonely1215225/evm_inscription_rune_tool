@@ -1,4 +1,4 @@
-let transactionMode = "self";
+let transactionMode = "other";
 let recipientInput;
 let useCustomGas = true;
 let useCustomFee = true;
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 初始模組加載
     recipientInput = document.getElementById("recipient-input");
-    setTransactionMode("self");
+    setTransactionMode("other");
     toggleGas();
     toggleFee();
 
