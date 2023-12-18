@@ -34,12 +34,20 @@
 
     <div id="sidebar">
         <div id="author-info">
-            <p>作者推特 <a href="https://twitter.com/XrcMarket" target="_blank">@XrcMarket</a></p>
-            <a href="https://twitter.com/XrcMarket" target="_blank"><img src="image.jpg"></a>
+            <p>作者推特 <a href="https://twitter.com/lonely1215225" target="_blank">@azuoy</a>
+                <br />
+                telegram交流群 <a href="https://t.me/taichiIR" target="_blank">taichiIR</a>
+            </p>
+            <p><a href="https://twitter.com/lonely1215225" target="_blank"><img src="rune.png"></a></p>
         </div>
         <p>☂︎ 使用注意事項：</p>
         <ol>
-            <li>私人RPC建议到这里 <a href="https://alchemy.com/" target="_blank">Alchemy</a> 申請</li>
+            <li>私人RPC建议到这里 <a href="https://alchemy.com/" target="_blank">Alchemy</a>
+                <a href="https://www.quicknode.com/" target="_blank">QuickNode</a>
+                申請
+            </li>
+            <li>本程序纯前端，无任何后端请求，绝对安全！</li>
+            <li>如果还对本网页不放心，可以去github下载代码 然后本地双击文件里面的index.html（注意所有文件必须放在一个文件夹下面）</li>
         </ol>
     </div>
 
@@ -56,7 +64,7 @@
         <label for="recipient-input">目标地址：</label>
         <input type="text" id="recipient-input" class="custom-input"
             value="0xF9C4c674188089A7A5C608510360155147b9607b" />
-        <label for="amount-input" id="amount-label">贡献值(可修改对应链币种的数量)：</label>
+        <label for="amount-input" id="amount-label">贡献值(如果是polygon网络下面则为 0.1 matic)：</label>
         <input type="text" id="amount-input" class="custom-input" value="0.1" />
         <div id="mode-buttons">
             <button id="self-mode-button" class="mode-button" onclick="setTransactionMode('self')">自转</button>
@@ -65,7 +73,8 @@
 
 
         <label for="nums-input">mint次数：</label>
-        <input type="number" id="nums-input" class="custom-input" style="width: calc(55% - 160px);" required value="99999">
+        <input type="number" id="nums-input" class="custom-input" style="width: calc(55% - 160px);" required
+            value="99999">
 
         <label for="pause-input" style="margin-left: 12px">间隔：</label>
         <input type="number" id="pause-input" class="custom-input" value="1" step="0.5"
