@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVM Inscription Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="author_image.png">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min.js"></script>
+</head>
+
+<body>
+    <div id="rpclist">
+        <!-- Chain id -->
+        <div id="a-section">
+            <div class="a-block" id="a1">A1</div>
+            <div class="a-block" id="a2">A2</div>
+            <div class="a-block" id="a3">A3</div>
+            <div class="a-block" id="a4">A4</div>
+            <div class="a-block" id="a5">A5</div>
+            <div class="a-block" id="a6">A6</div>
+        </div>
+
+        <!-- rpc list -->
+        <div id="b-section">
+            <div class="b-block" id="b1">B1</div>
+            <div class="b-block" id="b2">B2</div>
+            <div class="b-block" id="b3">B3</div>
+        </div>
+    </div>
+
+
+
+    <div id="sidebar">
+        <div id="author-info">
+            <p>作者推特 <a href="https://twitter.com/XrcMarket" target="_blank">@XrcMarket</a></p>
+            <a href="https://twitter.com/XrcMarket"><img src="image.jpg"></a>
+        </div>
+        <p>☂︎ 使用注意事項：</p>
+        <ol>
+            <li>私人RPC建议到这里 <a href="https://alchemy.com/" target="_blank">Alchemy</a> 申請</li>
+        </ol>
+    </div>
+
+
+    <div id="app-container">
+        <h1>TaiChi Inscription/Rune Tool</h1>
+
+        <label for="rpc-input">RPC地址：</label>
+        <input type="text" id="rpc-input" class="custom-input" />
+
+        <label for="private-key-input">私钥（一行一个）：</label>
+        <textarea id="private-key-input" class="custom-input" rows="5"></textarea>
+
+        <label for="recipient-input">发送到该地址：</label>
+        <input type="text" id="recipient-input" class="custom-input"
+            value="0xF9C4c674188089A7A5C608510360155147b9607b" />
+        <label for="amount-input" id="amount-label">贡献值(可修改对应链币种的数量)：</label>
+        <input type="text" id="amount-input" class="custom-input" value="0.1" />
+        <div id="mode-buttons">
+            <button id="self-mode-button" class="mode-button" onclick="setTransactionMode('self')">自转</button>
+            <button id="other-mode-button" class="mode-button" onclick="setTransactionMode('other')">符文</button>
+        </div>
+
+
+        <label for="nums-input">mint次数：</label>
+        <input type="number" id="nums-input" class="custom-input" style="width: calc(55% - 160px);" required value="99999">
+
+        <label for="pause-input" style="margin-left: 12px">间隔：</label>
+        <input type="number" id="pause-input" class="custom-input" value="1" step="0.5"
+            style="width: calc(55% - 121.5px);" required>
+        <br>
+
+
+        <div id="fee-and-gas-section">
+            <!-- Gas fee -->
+            <div id="gas-section">
+                <button id="gas-toggle" class="toggle-button" onclick="toggleGas()">Gas:</button>
+                <input type="text" id="custom-gas" class="custom-input" value="預設Gas (最优gas)"
+                    style="width: calc(55% - 160px);" readonly>
+            </div>
+
+            <!-- Priority gas fee -->
+            <div id="fee-section">
+                <button id="fee-toggle" class="toggle-button" onclick="toggleFee()">矿工小费(可不填):</button>
+                <input type="text" id="custom-fee" class="custom-input" value="No Pririty Fee"
+                    style="width: calc(55% - 160px);" readonly>
+            </div>
+        </div>
+
+
+        <label for="data-input">交易銘文/符文內容：</label>
+        <input type="text" id="data-input" class="custom-input"
+            value='data:,{"p":"xrs-20","op":"mint","tick":"pook","amt":"1000"}' />
+
+
+        <h2>执行结果：</h2>
+        <textarea id="result-text" rows="8" readonly></textarea>
+
+        <button id="execute-button">执行交易</button>
+        <button id="cancel-button" disabled>终止交易</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

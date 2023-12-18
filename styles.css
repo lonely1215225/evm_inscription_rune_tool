@@ -1,0 +1,299 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #282c34;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+
+#app-container {
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 20px;
+    background-color: #1E1E26;
+    color: #FFFFFF;
+    border-radius: 8px;
+    font-size: 16px;
+
+}
+
+.custom-input {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #267ad4;
+    border-radius: 4px;
+    background-color: #2E2E38;
+    color: #FFFFFF;
+}
+
+
+#result-text {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #267ad4;
+    border-radius: 4px;
+    background-color: #2E2E38;
+    color: #FFFFFF;
+    overflow-y: scroll;
+    resize: none;
+}
+
+
+button {
+    padding: 10px;
+    background-color: #515fc9;
+    color: #1E1E26;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1343d3;
+}
+
+#mode-buttons {
+    margin-top: 0px;
+    display: flex;
+}
+
+
+#execute-button:disabled {
+    cursor: not-allowed;
+}
+
+/* 新增終止交易按鈕樣式 */
+#cancel-button {
+    padding: 10px;
+    background-color: #c13434;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#cancel-button:disabled {
+    background-color: #6d1c1c;
+    cursor: not-allowed;
+}
+
+#cancel-button:hover:enabled {
+    background-color: #c13434;
+}
+
+
+/******************************/
+
+/*  Gas相關  */
+#fee-and-gas-section {
+    padding: 0px;
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Gas模組 */
+#gas-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+#gas-toggle {
+    padding: 8px;
+    background-color: #2E2E38;
+    border: 1px solid #267ad4;
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+#custom-gas[readonly] {
+    margin-left: 8px;
+    background-color: #267ad4;
+    border: 1px solid #267ad4;
+}
+
+#custom-gas {
+    flex: 1;
+    min-width: 200px;
+    margin: 0px;
+    margin-left: 8px;
+    border: 1px solid #267ad4;
+    border-radius: 4px;
+}
+
+/* 小費模組 */
+#fee-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+#fee-toggle {
+    padding: 6.8px;
+    margin-left: 10.5px;
+    min-width: 80px;
+    background-color: #2E2E38;
+    border: 1px solid #267ad4;
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+#custom-fee[readonly] {
+    margin-left: 10.6px;
+    background-color: #267ad4;
+    border: 1px solid #267ad4;
+    border-radius: 4px;
+}
+
+#custom-fee {
+    flex: 1;
+    min-width: 210px;
+    margin: 0px;
+    margin-left: 10.6px;
+    border: 1px solid #267ad4;
+    border-radius: 4px;
+}
+
+
+/******************************/
+
+
+/* 自轉/其他切換 */
+.mode-button {
+    padding: 8px;
+    margin: 0px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+#self-mode-button {
+    background-color: #2E2E38;
+    border: 1px solid #267ad4;
+    color: #FFFFFF;
+}
+
+#other-mode-button {
+    margin-left: 7px;
+    background-color: #2E2E38;
+    border: 1px solid #267ad4;
+    color: #FFFFFF;
+}
+
+
+#gas-button {
+    background-color: #2E2E38;
+    border: 1px solid #267ad4;
+    color: #FFFFFF;
+}
+
+#fee-button {
+    margin-left: 7px;
+    background-color: #2E2E38;
+    border: 1px solid #267ad4;
+    color: #FFFFFF;
+}
+
+
+
+/******************************/
+
+
+/* 側欄 */
+#sidebar {
+    word-wrap: break-word;
+    float: right;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #1E1E26;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+
+#author-info {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#author-info img {
+    width: 70px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+#sidebar p {
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+#sidebar ol {
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+#sidebar a {
+    color: #267ad4;
+}
+
+#sidebar a:hover {
+    color: #267ad4;
+}
+
+
+/******************************/
+
+/* RPC list */
+#rpclist {
+    float: left;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #1E1E26;
+    border-radius: 10px;
+    margin-left: 30px;
+}
+
+/* A 部分块的样式 */
+.a-block {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 0px;
+    background-color: #2E2E38;
+    color: #FFFFFF;
+    border-radius: 4px;
+    text-align: center;
+}
+
+#a-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 一行三列 */
+    grid-gap: 10px;
+    /* 调整块之间的间距 */
+}
+
+/* B 部分块的样式 */
+.b-block {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #2E2E38;
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+#b-section {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
