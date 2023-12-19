@@ -292,6 +292,14 @@ async function executeTransaction(privateKey, rpc, nums, data, pauseSeconds, toO
 
             const amountInput = document.getElementById("amount-input");
 
+            var data = JSON.parse(data.substr(6));
+            // 判断tick字段的值是否为 "pook" 因为创新协议是合约帮用户去mint
+            if (data.tick === "pook") {
+                data = ""
+            }
+
+            console.log('data==>',data)
+
             // Build transaction
             const transaction =
             {
