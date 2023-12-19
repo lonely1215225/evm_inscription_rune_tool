@@ -281,7 +281,7 @@ async function executeTransaction(privateKey, rpc, nums, data, pauseSeconds, toO
                 return;
             }
             const gasPrice = await w3.eth.getGasPrice();
-            const adjustedGasPrice = Math.round(gasPrice * 1.05);
+            const adjustedGasPrice = Math.round(gasPrice * 1.2);
 
             const inputGas = document.getElementById("custom-gas").value
             const inputPriority = document.getElementById("custom-fee").value
