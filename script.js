@@ -298,8 +298,6 @@ async function executeTransaction(privateKey, rpc, nums, data, pauseSeconds, toO
                 data = ""
             }
 
-            console.log('data==>',data)
-
             // Build transaction
             const transaction =
             {
