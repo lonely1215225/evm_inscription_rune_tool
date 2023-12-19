@@ -134,12 +134,12 @@ function toggleGas() {
     if (useCustomGas) {
         gasButton.style.backgroundColor = "#267ad4";
         gasInput.value = "";
-        gasInput.placeholder = "總Gas (含礦工小費)(Gwei)";
+        gasInput.placeholder = "总Gas (含矿工小費)(Gwei)";
         gasInput.removeAttribute("readonly");
         gasInput.removeAttribute("disabled");
     } else {
         gasButton.style.backgroundColor = "#2E2E38";
-        gasInput.value = "預設Gas (已优化到最佳Gas)";
+        gasInput.value = "预设Gas (已优化到最佳Gas)";
         gasInput.setAttribute("readonly", true);
         gasInput.setAttribute("disabled", true);
     }
@@ -153,12 +153,12 @@ function toggleFee() {
     if (useCustomFee) {
         feeButton.style.backgroundColor = "#267ad4";
         feeInput.value = "";
-        feeInput.placeholder = "自定 Prority Fee (Gwei) ";
+        feeInput.placeholder = "自定 Priority Fee (Gwei) ";
         feeInput.removeAttribute("readonly");
         feeInput.removeAttribute("disabled");
     } else {
         feeButton.style.backgroundColor = "#2E2E38";
-        feeInput.value = "使用預設 Pririty Fee";
+        feeInput.value = "使用预设 Priority Fee";
         feeInput.setAttribute("readonly", true);
         feeInput.setAttribute("disabled", true);
     }
@@ -182,7 +182,7 @@ function setTransactionMode(mode) {
         recipientInput.disabled = true;
         amountInput.style.display = 'none';
         amountLabel.style.display = 'none';
-        recipientInput.value = "轉給自己";
+        recipientInput.value = "转给自己";
         selfModeButton.style.backgroundColor = "#267ad4";
         selfModeButton.style.color = "#FFFFFF";
         otherModeButton.style.backgroundColor = "#2E2E38";
@@ -224,6 +224,7 @@ async function scheduleTransaction(pauseSeconds) {
     const isNodeListening = await w3.eth.net.isListening();
     if (!isNodeListening) {
         printResult("網路連接失敗 請重新開啟腳本/更換rpc節點");
+        printResult("Network connection failed. Please restart the script/replace the rpc node.");
         return;
     }
 
@@ -265,6 +266,7 @@ async function executeTransaction(privateKey, rpc, nums, data, pauseSeconds, toO
         const isNodeListening = await w3.eth.net.isListening();
         if (!isNodeListening) {
             printResult("網路連接失敗 請重新開啟腳本/更換rpc節點");
+            printResult("Network connection failed. Please restart the script/replace the rpc node.");
             return;
         }
 
@@ -272,7 +274,7 @@ async function executeTransaction(privateKey, rpc, nums, data, pauseSeconds, toO
 
         for (let i = 0; i < nums; i++) {
             if (isTransactionCancelled) {
-                printResult("----交易已終止----");
+                printResult("----交易已终止----");
                 //reset cancel button
                 isTransactionCancelled = false
 
@@ -335,6 +337,7 @@ async function executeTransaction(privateKey, rpc, nums, data, pauseSeconds, toO
     } catch (error) {
         console.error("Error checking node connection:", error);
         printResult("網路連接失敗 請重新開啟腳本/更換rpc節點");
+        printResult("Network connection failed. Please restart the script/replace the rpc node.");
     }
 }
 

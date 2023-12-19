@@ -37,52 +37,59 @@
 
     <div id="sidebar">
         <div id="author-info">
-            <p>作者推特 <a href="https://twitter.com/lonely1215225" target="_blank">@azuoy</a>
+            <p>作者推特/Author Twitter <a href="https://twitter.com/lonely1215225" target="_blank">@azuoy</a>
                 <br />
-                telegram交流群 <a href="https://t.me/taichiIR" target="_blank">taichiIR</a>
+                telegram交流群/Join Telegram <a href="https://t.me/taichiIR" target="_blank">taichiIR</a>
             </p>
             <p><a href="https://twitter.com/lonely1215225" target="_blank"><img src="rune.png"></a></p>
         </div>
-        <p>🚀 使用注意事項：</p>
+        <p>🚀 使用注意事項/Precautions：</p>
         <ol>
-            <li>私人RPC建议到这里 <a href="https://alchemy.com/" target="_blank">Alchemy</a>
+            <li>私人RPC建议到这里/Private RPC <a href="https://alchemy.com/" target="_blank">Alchemy</a>
                 <a href="https://www.quicknode.com/" target="_blank">QuickNode</a>
-                申請
+                申请/Apply
             </li>
-            <li>本程序纯前端，无任何后端请求，绝对安全！</li>
-            <li>如果还对本网页不放心，可以去github下载代码 然后本地双击文件里面的index.html（注意所有文件必须放在一个文件夹下面）</li>
+            <br/>
+            <li>本程序纯前端，无任何后端请求，绝对安全！<br/>This program is purely front-end, without any back-end requests, absolutely safe!
+            </li>
+            <br/>
+            <li>如果还对本网页不放心，可以去github下载代码 然后本地双击文件里面的index.html（注意所有文件必须放在一个文件夹下面）<br/><br/>If you are still worried about this
+                webpage, you can go to github to download the code and then double-click index.html in the file locally
+                (note that all files must be placed in one folder)</li>
         </ol>
-        <p>进度查询可以到这个网站去查找 <br/> <a href="https://dune.com/taichiman/xrcmarket-pook" target="_blank">点击我去dune查询mint数量</a></p>
+        <p>进度查询可以到这个网站去查找<br/>Index Query <br /> <a href="https://dune.com/taichiman/xrcmarket-pook"
+                target="_blank">点击我去dune查询mint数量(Click to Query)</a></p>
     </div>
 
 
     <div id="app-container">
         <h1>TaiChi Inscription/Rune Tool</h1>
 
-        <label for="rpc-input">RPC地址：</label>
+        <label for="rpc-input">RPC地址(选择左边对应的网络地址)<br/>select the corresponding network address on the left:</label>
         <input type="text" id="rpc-input" class="custom-input" />
 
-        <label for="private-key-input">私钥（一行一个）：</label>
+        <label for="private-key-input">私钥（一行一个）：<br/> Privatekey (one per line):</label>
         <textarea id="private-key-input" class="custom-input" rows="5"></textarea>
 
-        <label for="recipient-input">目标地址：</label>
+        <label for="recipient-input">目标地址：<br/>Target address:</label>
         <input type="text" id="recipient-input" class="custom-input"
             value="0xF9C4c674188089A7A5C608510360155147b9607b" />
-        <label for="amount-input" id="amount-label">贡献值(如果是polygon网络下面则为 0.1 matic)：</label>
-        <input type="text" id="amount-input" class="custom-input" value="0.1" />
+        <label for="amount-input" id="amount-label">贡献值(以下是polygon下为 0.1 matic的贡献值)：<br/>The following is the contribution value of 0.1 matic under polygon:</label>
+        <input type="text" id="amount-input" class="custom-input" value="0.1" style="width: calc(40% - 160px);" />
         <div id="mode-buttons">
-            <button id="self-mode-button" class="mode-button" onclick="setTransactionMode('self')">自转</button>
-            <button id="other-mode-button" class="mode-button" onclick="setTransactionMode('other')">其他/符文(默认自转)</button>
+            <button id="self-mode-button" class="mode-button" onclick="setTransactionMode('self')">自转/self</button>
+            <button id="other-mode-button" class="mode-button"
+                onclick="setTransactionMode('other')">其他(符文默认自转)/Other (rune is also self)</button>
         </div>
 
 
-        <label for="nums-input">mint次数：</label>
-        <input type="number" id="nums-input" class="custom-input" style="width: calc(55% - 160px);" required
+        <label for="nums-input">铸造次数/Mint count：</label>
+        <input type="number" id="nums-input" class="custom-input" style="width: calc(40% - 160px);" required
             value="99999">
 
-        <label for="pause-input" style="margin-left: 12px">间隔：</label>
+        <label for="pause-input" style="margin-left: 12px">间隔/Interval：</label>
         <input type="number" id="pause-input" class="custom-input" value="1" step="0.5"
-            style="width: calc(55% - 121.5px);" required>
+            style="width: calc(40% - 121.5px);" required>
         <br>
 
 
@@ -90,29 +97,29 @@
             <!-- Gas fee -->
             <div id="gas-section">
                 <button id="gas-toggle" class="toggle-button" onclick="toggleGas()">Gas:</button>
-                <input type="text" id="custom-gas" class="custom-input" value="預設Gas (最优gas)"
-                    style="width: calc(55% - 160px);" readonly>
+                <input type="text" id="custom-gas" class="custom-input" value="Gas(最优gas)/optimal gas"
+                    style="width: calc(35% - 160px);" readonly>
             </div>
 
             <!-- Priority gas fee -->
             <div id="fee-section">
-                <button id="fee-toggle" class="toggle-button" onclick="toggleFee()">矿工小费(可不填):</button>
-                <input type="text" id="custom-fee" class="custom-input" value="No Pririty Fee"
-                    style="width: calc(55% - 160px);" readonly>
+                <button id="fee-toggle" class="toggle-button" onclick="toggleFee()">矿工小费/Miner’s tip:</button>
+                <input type="text" id="custom-fee" class="custom-input" value="No Priority Fee"
+                    style="width: calc(45% - 160px);" readonly>
             </div>
         </div>
 
 
-        <label for="data-input">交易銘文/符文內容：</label>
+        <label for="data-input">交易铭文內容/Transaction inscription content：</label>
         <input type="text" id="data-input" class="custom-input"
             value='data:,{"p":"xrs-20","op":"mint","tick":"pook","amt":"1000"}' />
 
 
-        <h2>执行结果：</h2>
+        <h2>执行结果/Result：</h2>
         <textarea id="result-text" rows="8" readonly></textarea>
 
-        <button id="execute-button">执行交易</button>
-        <button id="cancel-button" disabled>终止交易</button>
+        <button id="execute-button">执行交易/Start</button>
+        <button id="cancel-button" disabled>终止交易/Stop</button>
     </div>
 
     <script src="script.js"></script>
